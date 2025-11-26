@@ -3,7 +3,7 @@
 Unity EditorをAIエージェント（Antigravity, Claude, Cursorなど）から直接操作するためのツールキットです。
 `CoplayDev/unity-mcp` をベースに、より簡単に導入できるように調整されています。
 
-## ✨ 主な機能
+## 主な機能
 
 *   **自然言語で操作**: 「赤いキューブを作って」「シーンを保存して」といった指示でUnityを操作できます。
 *   **アセット管理**: アセットの作成、変更、削除が可能です。
@@ -12,7 +12,7 @@ Unity EditorをAIエージェント（Antigravity, Claude, Cursorなど）から
 
 ---
 
-## 🚀 インストール手順
+## インストール手順
 
 ### ステップ 1: Unityパッケージの導入
 
@@ -43,17 +43,22 @@ AIとUnityをつなぐためのサーバープログラムを起動する必要�
 
 ---
 
-## 🔌 Antigravity (MCPクライアント) の設定
+## Antigravity (MCPクライアント) の設定
 
-お使いのAIエージェントの設定ファイルに、以下のサーバー情報を追加してください。
+AIエージェントがこのサーバーを認識できるように、設定ファイルに情報を追加する必要があります。
 
-**サーバーURL (HTTP)**:
-```
-http://localhost:8080/sse
-```
-※ クライアントによっては `/sse` が不要な場合や、`/mcp` の場合があります。接続できない場合は `http://localhost:8080/mcp` もお試しください。
+### 必要な情報
 
-### 設定例 (claude_desktop_config.json)
+*   **サーバータイプ**: `sse` (Server-Sent Events) または `http`
+*   **URL**: `http://localhost:8080/sse`
+
+### 設定手順
+
+お使いの環境に合わせて設定を行ってください。
+
+#### Claude Desktop / Antigravity の場合
+
+設定ファイル（`claude_desktop_config.json` など）を開き、`mcpServers` セクションに以下を追加してください。
 
 ```json
 {
@@ -65,9 +70,24 @@ http://localhost:8080/sse
 }
 ```
 
+#### Cursor の場合
+
+1.  Cursorの設定画面を開きます。
+2.  **Features > MCP** セクションを探します。
+3.  **Add New MCP Server** をクリックします。
+4.  以下のように入力します。
+    *   **Name**: `UnityMCP`
+    *   **Type**: `SSE`
+    *   **URL**: `http://localhost:8080/sse`
+
+#### 接続確認
+
+設定後、AIエージェントを再起動し、「Unityのシーンにあるオブジェクトを教えて」と聞いてみてください。
+Unityエディタ上の情報が返ってくれば、接続成功です。
+
 ---
 
-## ❓ トラブルシューティング
+## トラブルシューティング
 
 *   **サーバーが起動しない**:
     *   Python 3.10以上がインストールされているか確認してください。
@@ -76,7 +96,7 @@ http://localhost:8080/sse
     *   Unityエディタが開いていることを確認してください。
     *   Unityのメニュー **Window > MCP for Unity** を開き、接続ステータスを確認できます。
 *   **ポート8080が使われている**:
-    *   `start_server.bat` をテキストエディタで開き、`--http-port 8080` の数字を別の番号（例: 8081）に変更してください。
+    *   `start_server.bat` をテキストエディタで開き、`--http-port 8080` の数字を別の番号（例: 8081）に変更してください。その場合、クライアント設定のURLも合わせて変更してください。
 
 ---
 
