@@ -13,11 +13,18 @@
 
 ### 手順 1: Unityへの導入
 
-1.  Unityプロジェクトを開きます。
-2.  メニューバーの **Window > Package Manager** を開きます。
-3.  左上の **+** ボタンをクリックし、**Add package from disk...** を選択します。
-4.  このフォルダ内の `unity-package/package.json` を選択して「開く」をクリックします。
-    *   これでUnityに機能が追加されます。
+**方法 A: Git URLからインストール（推奨）**
+1.  Unityの **Window > Package Manager** を開きます。
+2.  左上の **+** ボタンをクリックし、**Add package from git URL...** を選択します。
+3.  以下のURLを入力して「Add」をクリックします。
+    ```
+    https://github.com/PrayerEluned/unity-mcp.git?path=/unity-package
+    ```
+
+**方法 B: ディスクからインストール**
+1.  このリポジトリをダウンロードします。
+2.  Package Managerの **+** ボタンから **Add package from disk...** を選択します。
+3.  `unity-package/package.json` を選択します。
 
 ### 手順 2: サーバーの起動
 
