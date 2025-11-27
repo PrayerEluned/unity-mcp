@@ -52,7 +52,7 @@ ClaudeやCursorは他の選択肢として紹介していましたが、Antigrav
 ### Antigravity の場合
 
 1.  Antigravityの設定ファイル（`mcp_config.json` など）を開きます。
-    *   通常は `C:\Users\astro\.gemini\antigravity\mcp_config.json` にあります。
+    *   通常は `C:\Users\USERNAME\.gemini\antigravity\mcp_config.json` にあります。
 2.  `mcpServers` の部分に以下を追加してください。
 
 ```json
