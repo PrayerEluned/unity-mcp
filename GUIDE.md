@@ -46,9 +46,28 @@ AIとUnityがお話しするための「サーバー」を準備します。
 
 ## 🤖 手順 3: AIエージェントの設定
 
-お使いのAIツール（Claude DesktopやCursorなど）に、このサーバーのことを教えます。
+もちろん、**Antigravity** でもUnity MCPは利用可能です！
+ClaudeやCursorは他の選択肢として紹介していましたが、Antigravityで使う場合は以下の手順で設定してください。
 
-### Cursor (カーソル) をお使いの場合
+### Antigravity の場合
+
+1.  Antigravityの設定ファイル（`mcp_config.json` など）を開きます。
+    *   通常は `C:\Users\astro\.gemini\antigravity\mcp_config.json` にあります。
+2.  `mcpServers` の部分に以下を追加してください。
+
+```json
+{
+  "mcpServers": {
+    "UnityMCP": {
+      "url": "http://localhost:8080/sse"
+    }
+  }
+}
+```
+
+3.  Antigravityを再起動（または設定をリロード）します。
+
+### Cursor (カーソル) の場合
 
 1.  Cursorを開き、右上の歯車アイコン（設定）をクリックします。
 2.  設定メニューの中から **Features** > **MCP** を探してクリックします。
