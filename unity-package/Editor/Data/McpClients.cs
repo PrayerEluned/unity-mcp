@@ -186,7 +186,7 @@ namespace MCPForUnity.Editor.Data
                 mcpType = McpTypes.Kiro,
                 configStatus = "Not Configured",
             },
-            // 4) Codex CLI
+            // 5) Codex CLI
             new()
             {
                 name = "Codex CLI",
@@ -206,6 +206,28 @@ namespace MCPForUnity.Editor.Data
                     "config.toml"
                 ),
                 mcpType = McpTypes.Codex,
+                configStatus = "Not Configured",
+            },
+            // Antigravity
+            new()
+            {
+                name = "Antigravity",
+                windowsConfigPath = Path.Combine(
+                    Environment.GetFolderPath(Environment.SpecialFolder.UserProfile),
+                    ".antigravity",
+                    "mcp.json"
+                ),
+                macConfigPath = Path.Combine(
+                    Environment.GetFolderPath(Environment.SpecialFolder.UserProfile),
+                    ".antigravity",
+                    "mcp.json"
+                ),
+                linuxConfigPath = Path.Combine(
+                    Environment.GetFolderPath(Environment.SpecialFolder.UserProfile),
+                    ".antigravity",
+                    "mcp.json"
+                ),
+                mcpType = McpTypes.Antigravity,
                 configStatus = "Not Configured",
             },
         };
