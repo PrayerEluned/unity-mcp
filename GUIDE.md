@@ -67,6 +67,11 @@ ClaudeやCursorは他の選択肢として紹介していましたが、Antigrav
 
 3.  Antigravityを再起動（または設定をリロード）します。
 
+> **💡 接続の確認方法**
+> Unityの画面上には「Antigravity」という名前は表示されません（Unityは「サーバー」とだけつながっているため）。
+> 接続できたか確認するには、**`start_server.bat` の黒い画面** を見てください。
+> Antigravityが接続すると、画面に `GET /sse` や `Connected` といったログが流れます。
+
 ### Cursor (カーソル) の場合
 
 1.  Cursorを開き、右上の歯車アイコン（設定）をクリックします。
